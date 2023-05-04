@@ -3,15 +3,19 @@
 This project contains various artifacts utilized for testing the *DaVinci PAS Server / Case Review* use case.
 - **sample-payloads**: contains mock resources for sample request bundles
 
-# Staging Environment
+# Testing Environment
+Refer to the application endpoints below for use case testing.
+
 ## PAS Endpoints 
 Open / no auth required (FHIR R4): https://zs-davinci-pas-01-h4jmy6zwmq-uc.a.run.app
 
 Supported Operations
-- POST Claim/$submit
+- POST Claim/$submit 
+    - `https://zs-davinci-pas-01-h4jmy6zwmq-uc.a.run.app/Claim/$submit`
     - Accepts PAS Request Bundle as request body
     - *Recommendation*: Ensure Claim.id is populated in request bundle for future inquiry
 - POST Claim/$inquire
+    - `https://zs-davinci-pas-01-h4jmy6zwmq-uc.a.run.app/Claim/$inquire`
     - Accepts PAS Request Bundle as request body
     - *Important*: Request body must include Claim resource with Claim.id populated to search for a previously submitted request with the same Id
 

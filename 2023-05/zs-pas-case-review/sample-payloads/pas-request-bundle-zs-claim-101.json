@@ -1,0 +1,287 @@
+{
+    "resourceType": "Bundle",
+    "type": "collection",
+    "entry": [
+        {
+            "resource": {
+                "careTeam": [
+                    {
+                        "provider": {
+                            "reference": "Practitioner/123"
+                        },
+                        "role": {
+                            "coding": [
+                                {
+                                    "code": "referring",
+                                    "display": "Referring",
+                                    "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimCareTeamRole"
+                                }
+                            ],
+                            "text": "Referring"
+                        },
+                        "sequence": 1
+                    },
+                    {
+                        "provider": {
+                            "reference": "Practitioner/123"
+                        },
+                        "role": {
+                            "coding": [
+                                {
+                                    "code": "rendering",
+                                    "display": "Rendering",
+                                    "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimCareTeamRole"
+                                }
+                            ],
+                            "text": "Rendering"
+                        },
+                        "sequence": 2
+                    }
+                ],
+                "created": "2023-01-01",
+                "diagnosis": [
+                    {
+                        "diagnosisCodeableConcept": {
+                            "coding": [
+                                {
+                                    "code": "G89.4",
+                                    "system": "http://hl7.org/fhir/sid/icd-10-cm"
+                                }
+                            ]
+                        },
+                        "sequence": 1
+                    }
+                ],
+                "id": "ZS-Claim-101",
+                "insurance": [
+                    {
+                        "coverage": {
+                            "reference": "Coverage/InsuranceExample"
+                        },
+                        "focal": true,
+                        "sequence": 1
+                    }
+                ],
+                "insurer": {
+                    "reference": "Organization/InsurerExample"
+                },
+                "item": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber",
+                                "valueString": "ZS-Claim-101-1"
+                            },
+                            {
+                                "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceItemRequestType",
+                                "valueString": ""
+                            },
+                            {
+                                "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-requestedService",
+                                "valueString": "ServiceRequest/Order-Req-1"
+                            }
+                        ],
+                        "productOrService": {
+                            "coding": [
+                                {
+                                    "code": "70460",
+                                    "display": "Computed tomography, head or brain; with contrast material(s)",
+                                    "system": "http://www.ama-assn.org/go/cpt"
+                                }
+                            ],
+                            "text": "Computed tomography, head or brain; with contrast material(s)"
+                        },
+                        "quantity": {
+                            "value": 1
+                        },
+                        "sequence": 1,
+                        "servicedPeriod": {
+                            "end": "2023-01-05",
+                            "start": "2023-01-05"
+                        }
+                    }
+                ],
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim"
+                    ]
+                },
+                "patient": {
+                    "reference": "Patient/Patient-1"
+                },
+                "priority": {
+                    "coding": [
+                        {
+                            "code": "normal",
+                            "display": "Normal",
+                            "system": "http://terminology.hl7.org/CodeSystem/processpriority"
+                        }
+                    ],
+                    "text": "Normal"
+                },
+                "provider": {
+                    "reference": "Organization/123"
+                },
+                "resourceType": "Claim",
+                "status": "active",
+                "supportingInfo": [
+                    {
+                        "category": {
+                            "coding": [
+                                {
+                                    "code": "info",
+                                    "display": "Information",
+                                    "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory"
+                                }
+                            ]
+                        },
+                        "sequence": 1,
+                        "valueReference": {
+                            "reference": "QuestionnaireResponse/QuestionnaireResponse-1"
+                        }
+                    },
+                    {
+                        "category": {
+                            "coding": [
+                                {
+                                    "code": "info",
+                                    "display": "Information",
+                                    "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory"
+                                }
+                            ]
+                        },
+                        "sequence": 1,
+                        "valueReference": {
+                            "reference": "DocumentReference/Doc-Ref-1"
+                        }
+                    }
+                ],
+                "type": {
+                    "coding": [
+                        {
+                            "code": "professional",
+                            "display": "Professional",
+                            "system": "http://terminology.hl7.org/CodeSystem/claim-type"
+                        }
+                    ],
+                    "text": "Professional"
+                },
+                "use": "preauthorization"
+            }
+        },
+        {
+            "resource": {
+                "authored": "2023-01-05T14:21:06.615Z",
+                "id": "QuestionnaireResponse-1",
+                "item": [
+                    {
+                        "answer": [
+                            {
+                                "valueString": "10"
+                            }
+                        ],
+                        "linkId": "Q1",
+                        "text": "PAMA Score"
+                    },
+                    {
+                        "answer": [
+                            {
+                                "valueString": "Previous diagnotistic results are inconclusive.  Please refer to attached discharge summary for more information."
+                            }
+                        ],
+                        "linkId": "Q2",
+                        "text": "Clinical rationale for procedure"
+                    }
+                ],
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse|2.7"
+                    ]
+                },
+                "resourceType": "QuestionnaireResponse",
+                "status": "completed"
+            }
+        },
+        {
+            "resource": {
+                "authoredOn": "2023-01-01T14:00:00Z",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "code": "363679005",
+                                "display": "Imaging",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ],
+                        "text": "Imaging"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "code": "70460",
+                            "display": "Computed tomography, head or brain; with contrast material(s)",
+                            "system": "http://www.ama-assn.org/go/cpt"
+                        }
+                    ],
+                    "text": "Computed tomography, head or brain; with contrast material(s)"
+                },
+                "id": "Order-Req-1",
+                "intent": "plan",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest"
+                    ]
+                },
+                "occurrenceDateTime": "2023-01-05",
+                "quantityQuantity": {
+                    "code": "{Each}",
+                    "system": "http://unitsofmeasure.org",
+                    "unit": "Each",
+                    "value": 1
+                },
+                "requester": {
+                    "reference": "Practitioner/practitioner-1"
+                },
+                "resourceType": "ServiceRequest",
+                "status": "draft",
+                "subject": {
+                    "reference": "Patient/Patient-1"
+                }
+            }
+        },
+        {
+            "resource": {
+                "birthDate": "2004-01-01",
+                "gender": "female",
+                "id": "Patient-1",
+                "name": [
+                    {
+                        "text": "Jane Doe"
+                    }
+                ],
+                "resourceType": "Patient"
+            }
+        },
+        {
+            "resource": {
+                "beneficiary": {
+                    "reference": "Patient/Patient-1"
+                },
+                "id": "Coverage-1",
+                "payor": [
+                    {
+                        "reference": "Organization/InsurerExample"
+                    }
+                ],
+                "resourceType": "Coverage",
+                "status": "active",
+                "subscriber": {
+                    "reference": "Patient/Patient-1"
+                },
+                "subscriberId": "PlanSubsriber-1"
+            }
+        }
+    ]
+}

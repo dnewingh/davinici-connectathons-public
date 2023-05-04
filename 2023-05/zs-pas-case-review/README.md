@@ -19,7 +19,7 @@ Supported Operations
     - Accepts PAS Request Bundle as request body
     - *Important*: Request body must include Claim resource with Claim.id populated to search for a previously submitted request with the same Id
 
-## Case Review Interface 
+## Case Review Application 
 Manual Review Interface: https://icy-bush-0fa244f0f.3.azurestaticapps.net/pas-landing-page
 
 
